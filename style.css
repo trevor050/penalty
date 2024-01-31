@@ -58,7 +58,10 @@ html, body {
   .marquee p {
     display: inline-block;
     animation: marqueeEffect 10s linear infinite; /* Adjust timing as needed */
+    animation-delay: 0s;
     padding-left: 100%; /* Start offscreen */
+    margin-left: -100%; /* Start offscreen */
+
   }
   
 
