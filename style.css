@@ -1,32 +1,79 @@
 html, body {
-    height: 100%;
     margin: 0;
-    
-  
-    /* This will set your image to its natural size */
-    background-size: auto;
-  
-  
-    /* This will center the image in the page */
-    background-position: center center;
-    
-    /* If the image does not cover the whole screen, this will mirror it both vertically and horizontally to fill the space */
-    background-size: 20%;
-    background-repeat: repeat;
-    color:white;
-    font-family: 'Press Start 2P', cursive;
-  }
-  /* Create a pseudo-element to act as an overlay */
-
-  #mainImg {
-    /* Set the dimensions to fill the screen */
-    width: 100%;
+    padding: 0;
     height: 100%;
+    overflow: hidden; /* Disabled scrolling */
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000; /* Typically 90s websites had plain backgrounds */
+    background-image: url('penalty.jfif');
+    background-repeat: repeat; /* This will tile your background image */
+    background-attachment: fixed; /* Ensures the background is fixed during scroll */
+    background-size: 20%;
+  }
+  
+  #mainImg {
+    width: 100%;
+    height: 100vh; /* Viewport height to fit screen */
+    cursor: pointer; /* To indicate the image is clickable */
+    display: block; /* This will show the image initially */
+  }
+  
+  #main {
+    background: linear-gradient(to bottom right, #2b2b2b, #323232);
+    color: #e6e6e6; /* Neon green text, very 90s */
+    height: 85vh; /* Using vh for responsive height */
+    width: 75vw; /* Using vw for responsive width, adjust as needed */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* This will be hidden initially */
+    padding: 2vw; /* Responsive padding */
+    box-sizing: border-box; /* Include padding in width calculation */
+    overflow: auto; /* Add scroll inside div if content overflows */
+    border: 1px solid #5c055f; /* A border to stand out */
+  }
+  
+  #headerText {
+    text-align: center;
+    font-size: 4vw; /* Responsive font size */
+    margin-bottom: 2vw; /* Responsive margin */
+  }
 
-    /* Set the image as a background */
+  
+  @keyframes marqueeEffect {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .marquee {
+    background: #111; /* Dark background for the marquee */
+    color: #770777; /* Neon text */
+    white-space: nowrap; /* Keep text in one line */
+    overflow: hidden; /* Hide overflow */
+    position: relative;
+  }
+  
+  .marquee p {
+    display: inline-block;
+    animation: marqueeEffect 10s linear infinite; /* Adjust timing as needed */
+    padding-left: 100%; /* Start offscreen */
+  }
+  
 
-    /* Position and size the image to fill the element */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+  .content {
+    text-align: center; /*
+    padding: 0 2vw; /* Responsive padding */
+    font-size: 1.5em; /* Responsive font size */
+  }
+
+  @media (max-width: 600px) {
+    .content {
+      font-size: 0.7em;
+      word-spacing: 0.5px;
+    }
+    body {
+        background-size: 10%
+    }
+  }
