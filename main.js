@@ -1,6 +1,7 @@
 window.onload = function() {
     console.log("Document loaded");
     document.getElementById("main").style.display = "none";
+    hideMain()
 };
 function hideMain() {
     document.getElementById("mainImg").style.display = "none";
